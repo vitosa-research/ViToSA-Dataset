@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+vitosa.egg-info/PKG-INFO
+vitosa.egg-info/SOURCES.txt
+vitosa.egg-info/dependency_links.txt
+vitosa.egg-info/top_level.txt
+vitosa_pipeline/__init__.py
+vitosa_pipeline/vitosa_pipeline.py
