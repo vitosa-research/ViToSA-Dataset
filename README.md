@@ -66,7 +66,6 @@ Each entry includes:
 ✅ Automatic GPU / CPU selection  
 ✅ Robust Hugging Face model handling  
 ✅ Toxic word masking with "***"  
-✅ Batch folder processing with results saved automatically  
 
 ---
 
