@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: vitosa
-Version: 1.0
+Version: 1.0.0
 Summary: Vietnamese Audio-based Toxic Spans Detection Pipeline
 Home-page: https://github.com/tarudesu/ViToSA-1.0
 Author: Luan Thanh Nguyen
