@@ -1,7 +1,4 @@
-# ViToSA-Pipeline
-
-Vietnamese Speech-to-Toxicity Analysis (ViToSA) Pipeline  
-Combining PhoWhisper ASR and PhoBERT TSD for Vietnamese audio moderation.
+# ViToSA: Vietnamese Audio-based Toxic Spans Detection  
 
 ---
 
@@ -12,7 +9,7 @@ Combining PhoWhisper ASR and PhoBERT TSD for Vietnamese audio moderation.
 - Detecting and masking toxic words with ViToSA PhoBERT TSD.
 - Optionally processing full directories of `.wav` files.
 
-It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic span detection, developed by the University of Information Technology (VNU-HCM).
+It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic span detection, developed by researchers from the University of Information Technology (VNU-HCM).
 
 ---
 
