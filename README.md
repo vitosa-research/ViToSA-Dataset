@@ -83,11 +83,45 @@ pip install vitosa-pipeline
 
 ## Usage
 
+### 1. Full Pipeline (ASR + TSD)
+
+Transcribe and censor toxic words in an audio file:
+
 ```python
 from vitosa_pipeline import ViToSA
 
 vitosa = ViToSA()
 print(vitosa.pipeline("example.wav"))
+```
+
+### 2. Individual Components
+
+#### 2.1. ASR Only - Transcribe Audio
+
+Transcribe an utterance with ViToSA-PhoWhisper:
+
+```python
+from vitosa_pipeline import ViToSA
+
+vitosa = ViToSA()
+print(vitosa.asr("path_to_audio.wav"))
+```
+
+#### 2.2. TSD Only - Detect Toxic Spans
+
+Detect and mask toxic words with ViToSA-PhoBERT:
+
+```python
+from vitosa_pipeline import ViToSA
+
+vitosa = ViToSA()
+transcript = "your_text_here"
+
+# Return censored text with *** masking toxic words
+print(vitosa.tsd(transcript))
+
+# Return binary labels (0 = non-toxic, 1 = toxic word)
+print(vitosa.tsd(transcript, return_labels=True))
 ```
 
 ---
