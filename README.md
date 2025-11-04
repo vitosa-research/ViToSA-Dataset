@@ -1,4 +1,4 @@
-# ViToSA: Vietnamese Audio-based Toxic Spans Detection  
+# ViToSA: Audio-Based Toxic Spans Detection on Vietnamese Speech Utterances | INTERSPEECH'2025 
 
 ---
 
