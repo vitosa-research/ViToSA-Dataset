@@ -16,7 +16,6 @@ It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset f
 ## About the ViToSA Dataset
 
 **Title:** [ViToSA: Audio-Based Toxic Spans Detection on Vietnamese Speech Utterances](https://www.isca-archive.org/interspeech_2025/do25b_interspeech.pdf)
-
 **Version:** 1.0 (August 2025)  
 **Authors:** Huy Ba Do, Vy Le-Phuong Huynh, and Luan Thanh Nguyen  
 **Institution:** University of Information Technology, VNU-HCM  
