@@ -79,9 +79,14 @@ class ViToSA:
         ).input_features.to(self.device)
 
         with torch.no_grad():
-            predicted_ids = self.asr_model.generate(input_features)
-            transcription = self.proc.batch_decode(predicted_ids, skip_special_tokens=True)[0]
+            
+            predicted_ids = self.asr_model.generate(
+                input_features,
+                task="transcribe",      
+                language="vi"          
+            )
 
+            transcription = self.proc.batch_decode(predicted_ids, skip_special_tokens=True)[0]
         return transcription.strip()
 
     # === TSD ===
