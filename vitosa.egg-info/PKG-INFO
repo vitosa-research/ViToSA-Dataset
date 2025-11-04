@@ -1,14 +1,14 @@
 Metadata-Version: 2.4
 Name: vitosa
-Version: 1.0.0.post2
+Version: 1.0.0.post39
 Summary: Vietnamese Audio-based Toxic Spans Detection Pipeline
-Home-page: https://github.com/tarudesu/ViToSA-1.0
+Home-page: https://github.com/vitosa-research/ViToSA-Dataset
 Author: Luan Thanh Nguyen
 Author-email: luannt@uit.edu.vn
 License: MIT
-Project-URL: Documentation, https://github.com/tarudesu/ViToSA-1.0#readme
-Project-URL: Source, https://github.com/tarudesu/ViToSA-1.0
-Project-URL: Tracker, https://github.com/tarudesu/ViToSA-1.0/issues
+Project-URL: Documentation, https://github.com/vitosa-research/ViToSA-Dataset#readme
+Project-URL: Source, https://github.com/vitosa-research/ViToSA-Dataset
+Project-URL: Tracker, https://github.com/vitosa-research/ViToSA-Dataset/issues
 Keywords: toxic detection,vietnamese,NLP,transformers,audio
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
@@ -30,7 +30,7 @@ Dynamic: license-file
 - Detecting and masking toxic words with ViToSA PhoBERT TSD.
 - Optionally processing full directories of `.wav` files.
 
-It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic span detection, developed by researchers from the University of Information Technology (VNU-HCM).
+It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic spans detection, developed by researchers from the University of Information Technology (VNU-HCM).
 
 ---
 
@@ -76,6 +76,8 @@ Each entry includes:
 - `transcript`: human transcription
 - `toxicity`: binary annotation
 
+For the test set, we also include its annotated toxic spans.
+
 **Modalities:** Audio + Text  
 **Language:** Vietnamese  
 **License:** CC-BY-NC-ND 4.0 (non-commercial, no derivatives)
@@ -87,7 +89,6 @@ Each entry includes:
 ✅ Automatic GPU / CPU selection  
 ✅ Robust Hugging Face model handling  
 ✅ Toxic word masking with "***"  
-✅ Batch folder processing with results saved automatically  
 
 ---
 

@@ -9,7 +9,7 @@
 - Detecting and masking toxic words with ViToSA PhoBERT TSD.
 - Optionally processing full directories of `.wav` files.
 
-It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic span detection, developed by researchers from the University of Information Technology (VNU-HCM).
+It is built on top of the **ViToSA 1.0 dataset**, the first Vietnamese dataset for audio-based toxic spans detection, developed by researchers from the University of Information Technology (VNU-HCM).
 
 ---
 
@@ -54,6 +54,8 @@ Each entry includes:
 - `audio`: waveform (float32)
 - `transcript`: human transcription
 - `toxicity`: binary annotation
+
+For the test set, we also include its annotated toxic spans.
 
 **Modalities:** Audio + Text  
 **Language:** Vietnamese  

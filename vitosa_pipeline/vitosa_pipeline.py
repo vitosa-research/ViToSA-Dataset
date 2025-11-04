@@ -60,7 +60,7 @@ class ViToSA:
             print("[ViToSA] Loading TSD model...")
         self.tokenizer = AutoTokenizer.from_pretrained(TSD_REPO, cache_dir=cache_dir)
         self.tsd_model = AutoModelForTokenClassification.from_pretrained(
-            TSD_REPO, cache_dir=cache_dir
+            TSD_REPO, cache_dir=cache_dir, num_labels=2
         ).to(self.device)
         self.tsd_model.eval()
 
@@ -97,29 +97,23 @@ class ViToSA:
             - str (masked text)
             - list[int] if return_labels=True
         """
-        words = text.split()
-        inputs = self.tokenizer(
-            words,
-            is_split_into_words=True,
-            padding='max_length',
-            truncation=True,
-            max_length=len(words) + 10,
-            return_tensors="pt"
-        ).to(self.device)
 
+        text = text.split()
+
+        enc = self.tokenizer(list(text), is_split_into_words=True,
+        padding='max_length', truncation=True,
+        max_length=len(list(text)), return_tensors="pt").to(self.device)
         with torch.no_grad():
-            outputs = self.tsd_model(**inputs)
-            predictions = outputs.logits.argmax(-1)[0].cpu().numpy()
-
-        word_predictions = predictions[1:len(words) + 1]  # skip CLS
+            logits = self.tsd_model(input_ids=enc.input_ids, attention_mask=enc.attention_mask).logits
+        labels = logits.argmax(-1)[0].cpu().tolist()
 
         if return_labels:
-            return word_predictions.tolist()
+            return labels
+
+        result = ' '.join(['***' if l == 1 else s for s, l in zip(text, labels)])
 
         # Replace toxic words
-        return " ".join(
-            [mask_token if label == 1 else w for w, label in zip(words, word_predictions)]
-        )
+        return result
 
     # === PIPELINE ===
     def pipeline(self, audio_filepath: str, mask_token: str = "***") -> str:
